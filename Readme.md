@@ -10,9 +10,11 @@ Versions were:
 
 This was not straight forward...
 
-Based on multiple resources stolen from Git and Slackoverflow, I managed to have a working project based on the following steps.
+After reading multiple resources on Git and Slackoverflow, I managed to have a working project based on the following steps.
 
-Hopefully these steps could help lonely souls like me! 
+Hopefully these steps could help lonely souls like me!
+
+The result project (which simply display a list of links stored in Mongo) is also hosted here. 
 
 ## Bootstrap it
 > Note: unless specified, all commands must be ran **in root directory**
