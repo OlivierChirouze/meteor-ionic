@@ -42,6 +42,11 @@ cd api
 rm -rf node_modules && ln -s ../node_modules .
 rm -rf package.json && ln -s ../package.json .
 rm -rf package-lock.json && ln -s ../package-lock.json .
+rm .gitignore
+```
+- update `.gitignore`. Add:
+```
+/api/nodes_modules
 ```
 - install some dependencies
 ```shell script
@@ -50,6 +55,7 @@ meteor npm install --save @babel/runtime
 npm install --save meteor-node-stubs
 npm install --save meteor-rxjs
 npm install --save meteor-typings
+npm install --save @types/meteor
 meteor remove static-html
 ```
 - add to `tsconfig.json`:
