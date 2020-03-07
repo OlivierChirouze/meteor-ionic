@@ -48,6 +48,10 @@ rm .gitignore
 ```
 /api/nodes_modules
 ```
+- remove Meteor client
+```shell script
+rm -rf api/client
+```
 - install some dependencies
 ```shell script
 cd api
@@ -55,7 +59,7 @@ meteor npm install --save @babel/runtime
 npm install --save meteor-node-stubs
 npm install --save meteor-rxjs
 npm install --save meteor-typings
-npm install --save @types/meteor
+npm install --save-dev @types/meteor
 meteor remove static-html
 ```
 - add to `tsconfig.json`:
