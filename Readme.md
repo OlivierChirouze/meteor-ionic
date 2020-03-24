@@ -145,3 +145,21 @@ ionic serve
 ... and you should see the home page displaying links! 👌
 
 ![links page](./links.png)
+
+## Troubleshooting
+
+It seems running `npm` commands from the `api` directory is not a good idea.
+I frequently ran into a nightmare with Ionic not starting anymore with this mysterious message:
+```shell script
+[ng] ERROR in No NgModule metadata found for 'AppModule'.
+```
+My solution was to:
+
+- edit the `src/app/app.module.ts` file (anything, add a comment for instance)
+- run the following commands **from the root directory** (not from `api`):
+
+```shell script
+npm cache clean --force
+npm install
+npm run meteor-client:bundle
+```
