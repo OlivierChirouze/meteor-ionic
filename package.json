@@ -5,12 +5,14 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ionic serve --no-open",
+    "meteor-client:bundle": "meteor-client bundle -s api",
+    "meteor-client:watch": "nodemon --watch api/model --exec npm run meteor-client:bundle",
+    "meteor": "meteor run",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "meteor-client:bundle": "meteor-client bundle -s api"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
