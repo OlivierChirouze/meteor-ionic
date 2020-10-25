@@ -148,6 +148,8 @@ ionic serve
 
 ## Troubleshooting
 
+### npm
+
 It seems running `npm` commands from the `api` directory is not a good idea.
 I frequently ran into a nightmare with Ionic not starting anymore with this mysterious message:
 ```shell script
@@ -163,3 +165,17 @@ npm cache clean --force
 npm install
 npm run meteor-client:bundle
 ```
+
+### Mongo is not defined
+
+It took me a long time to understand why in some cases I couldn't have the meteor client to work because
+it was complaining at runtime on the browser:
+```
+Mongo is not defined
+```
+
+The bottom line was: I was importing `meteor-client` *after* I was building the object that referenced `ObservableMongo` objects.
+(in fact it was imported after `app.module`, where the injection was resolved).
+
+For this reason I recommend to import `meteor-client` in the `app.module` or where you will use it
+(I keep all remote calls in a single service so this is where I usually put the import).
