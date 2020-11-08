@@ -179,3 +179,18 @@ The bottom line was: I was importing `meteor-client` *after* I was building the 
 
 For this reason I recommend to import `meteor-client` in the `app.module` or where you will use it
 (I keep all remote calls in a single service so this is where I usually put the import).
+
+### Some svg icons not found (404)
+
+In some cases, some Ionic icons cannot be found.
+
+Run:
+```
+rm -rf node_modules/*
+rm package-lock.json
+npm i
+npm run meteor-client:bundle
+ionic build
+```
+
+See https://github.com/ionic-team/ionic-framework/issues/17239
