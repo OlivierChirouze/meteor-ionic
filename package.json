@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ionic serve --no-open",
-    "meteor-client:bundle": "meteor-client bundle -s api",
+    "meteor-client:bundle": "NODE_ENV=development meteor-client bundle -s api",
     "meteor-client:watch": "nodemon --watch api --exec npm run meteor-client:bundle",
     "meteor": "meteor run",
     "build": "ng build",

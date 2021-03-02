@@ -16,6 +16,10 @@ Hopefully these steps could help lonely souls like me!
 
 The result project (which simply display a list of links stored in Mongo) is also hosted here. 
 
+## Step by step
+
+Either **clone this repository**, or follow the steps bellow.
+
 ## Bootstrap it
 > Note: unless specified, all commands must be ran **in root directory**
 
@@ -85,7 +89,7 @@ sudo npm install -g meteor-client-bundler
 ```
 - add target to `package.json`:
 ```json
-"meteor-client:bundle": "meteor-client bundle -s api"
+"meteor-client:bundle": "NODE_ENV=development meteor-client bundle -s api"
 ```
 - bundle client
 ```shell script
@@ -186,7 +190,7 @@ In some cases, some Ionic icons cannot be found.
 
 Run:
 ```
-rm -rf node_modules/*
+rm -rf node_modules
 rm package-lock.json
 npm i
 npm run meteor-client:bundle
